@@ -42,11 +42,11 @@ public class Menu {
                 System.out.println("Create playlist");
 
                 File file = new File("song.txt");
+                String [] parseData = new String[6];
 
                 try{
                 Scanner read = new Scanner(file);
                     while(read.hasNextLine()){
-                        String [] parseData = new String[6];
                         String data = read.nextLine();
 
                         parseData = data.split("::");
@@ -55,8 +55,22 @@ public class Menu {
                                     LocalDate.parse(parseData[2], DateTimeFormatter.ISO_LOCAL_DATE),
                                     Integer.parseInt(parseData[3]), parseData[4],parseData[5],
                                     parseData[6]);
-            
+
                         playlist.add(song);
+
+                        for (int i = 0; i < playlist.size(); i++){
+                            System.out.println("-------- Music library --------\n"
+                                        + "Artist :" + playlist.get(i).getArtista() + "\n"
+                                        + "Title :" + playlist.get(i).getTitle() + "\n" 
+                                        + "Id :" + playlist.get(i).getId() + "\n"
+                                        + "Date :" + playlist.get(i).getDate() + "\n"
+                                        + "Length :" + playlist.get(i).getLength() + "\n"
+                                        + "Genre :" + playlist.get(i).getGenre() + "\n"
+                                        + "Cover :" + playlist.get(i).getCover() + "\n"
+                                        + "shortDescription :" + playlist.get(i).getShortDescription() + "\n"
+                                        );
+                        }
+        
                     }
 
                     read.close();

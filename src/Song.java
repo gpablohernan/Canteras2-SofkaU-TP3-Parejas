@@ -20,7 +20,9 @@ public class Song {
     /**
      * Id de la canción
      */
-    private  int id = 0;
+    static int counter = 1;
+
+    private int id;
     /**
      * Fecha de la canción
      */
@@ -53,6 +55,7 @@ public class Song {
      * Genera una instancia de la clase Song con parámetros
      */
     public Song( String artist, String title, LocalDate date, int length, String genre, String cover, String shortDescription) {
+        this.id = counter;
         this.artist = artist;
         this.title = title;
         this.date = date;
@@ -61,7 +64,7 @@ public class Song {
         this.cover = cover;
         this.shortDescription = shortDescription;
 
-        ++this.id;
+        counter = counter +1;
     }
 
     /**
