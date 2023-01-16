@@ -1,5 +1,6 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * Representa la clase canción que luego generará un playlist de canciones
@@ -212,7 +213,22 @@ public class Song {
      * @param playlist
      */
     public void filterByGenre(ArrayList<Song> playlist){
-        // CUALQUIER COSA ME AVISAS
+        Scanner scanner = new Scanner(System.in).useDelimiter("\n");
+        String genre;
+        boolean flag = false;
+        System.out.println("Enter the genre to make the filter:");
+        genre = scanner.next();
+        for (Song song: playlist)
+        {
+            if (song.getGenre().equals(genre))
+            {
+                System.out.println(song);
+                flag = true;
+            }
+        }
+        if (!flag){
+            System.out.println("There are no songs with the genre you entered");
+        }
     }
 
     /**
@@ -220,13 +236,48 @@ public class Song {
      * @param playlist
      */
     public void filterByYear(ArrayList<Song> playlist){
-        // CUALQUIER COSA ME AVISAS
+
+        Scanner scanner = new Scanner(System.in).useDelimiter("\n");
+        int year;
+        boolean flag = false;
+        do
+        {
+            System.out.println("Enter the year to make the filter:");
+            year = scanner.nextInt();
+        } while (year > 1549 && year < 2024);
+
+        for (Song song: playlist)
+        {
+            if (song.getDate().getYear() == year)
+            {
+                System.out.println(song);
+                flag = true;
+            }
+        }
+        if (!flag){
+            System.out.println("There are no songs with the year you entered");
+        }
     }
     /**
      * Filtra las canciones de la playlist por artista
      * @param playlist
      */
     public void filterByArtist(ArrayList<Song> playlist){
-        // CUALQUIER COSA ME AVISAS
+        Scanner scanner = new Scanner(System.in).useDelimiter("\n");
+        String artist;
+        boolean flag = false;
+        System.out.println("Enter the artist to make the filter:");
+        artist = scanner.next();
+        for (Song song: playlist)
+        {
+            if (song.getArtist().equals(artist))
+            {
+                System.out.println(song);
+                flag = true;
+            }
+        }
+        if (!flag){
+            System.out.println("There are no songs with the artist you entered");
+        }
     }
 }
