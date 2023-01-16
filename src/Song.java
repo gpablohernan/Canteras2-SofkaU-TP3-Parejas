@@ -10,6 +10,10 @@ import java.util.ArrayList;
 public class Song {
 
     /**
+     * Artista de la canción
+     */
+    private String artist;
+    /**
      * Título de la canción
      */
     private String title;
@@ -48,7 +52,8 @@ public class Song {
     /**
      * Genera una instancia de la clase Song con parámetros
      */
-    public Song(String title, int id, LocalDate date, int length, String genre, String cover, String shortDescription) {
+    public Song(String artist, String title, int id, LocalDate date, Integer length, String genre, String cover, String shortDescription) {
+        this.artist = artist;
         this.title = title;
         this.id = id;
         this.date = date;
@@ -56,6 +61,20 @@ public class Song {
         this.genre = genre;
         this.cover = cover;
         this.shortDescription = shortDescription;
+    }
+    /**
+     * Getter, devuelve el artista de la canción
+     * @return el artista de la canción
+     */
+    public String getArtist() {
+        return artist;
+    }
+    /**
+     * Setter, setea el artista de la canción del objeto Song con el artista pasado por parámetro
+     * @param artist
+     */
+    public void setArtist(String artist) {
+        this.artist = artist;
     }
 
     /**
@@ -110,7 +129,7 @@ public class Song {
      * Getter, devuelve la duración de la canción
      * @return la duración de la canción
      */
-    public int getLength() {
+    public Integer getLength() {
         return length;
     }
 
@@ -118,7 +137,7 @@ public class Song {
      * Setter, setea la duración de la canción del objeto Song con la duración pasada por parámetro
      * @param length
      */
-    public void setLength(int length) {
+    public void setLength(Integer length) {
         this.length = length;
     }
 
@@ -177,7 +196,8 @@ public class Song {
     @Override
     public String toString() {
         return "Song{" +
-                "title='" + title + '\'' +
+                "artist='" + artist + '\'' +
+                ", title='" + title + '\'' +
                 ", id=" + id +
                 ", date=" + date +
                 ", length=" + length +
@@ -200,6 +220,13 @@ public class Song {
      * @param playlist
      */
     public void filterByYear(ArrayList<Song> playlist){
+        // CUALQUIER COSA ME AVISAS
+    }
+    /**
+     * Filtra las canciones de la playlist por artista
+     * @param playlist
+     */
+    public void filterByArtist(ArrayList<Song> playlist){
         // CUALQUIER COSA ME AVISAS
     }
 }
