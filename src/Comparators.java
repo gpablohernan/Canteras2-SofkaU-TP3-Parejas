@@ -2,7 +2,7 @@ import java.util.Comparator;
 
 /**
  * Ordena la playlist, en este caso por duración o por fecha de las canciones
- * @author Rubén Campos Reymundis - Pablo Hernán Gatti
+ * @author Ruben Campos Reymundis - Pablo Hernán Gatti
  *
  */
 

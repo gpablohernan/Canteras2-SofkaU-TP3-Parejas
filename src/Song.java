@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /**
  * Representa la clase canción que luego generará un playlist de canciones
- * @author Rubén Campos Reymundis - Pablo Hernán Gatti
+ * @author Ruben Campos Reymundis - Pablo Hernán Gatti
  *
  */
 
@@ -244,7 +244,7 @@ public class Song {
         {
             System.out.println("Enter the year to make the filter:");
             year = scanner.nextInt();
-        } while (year > 1549 && year < 2024);
+        } while (year < 1549 || year > 2024);
 
         for (Song song: playlist)
         {
