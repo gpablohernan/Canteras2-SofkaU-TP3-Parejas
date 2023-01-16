@@ -4,5 +4,5 @@
  *
  */
 
-public class Comparators {
+ public class Comparators {
 }

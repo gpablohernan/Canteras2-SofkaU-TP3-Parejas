@@ -10,13 +10,17 @@ import java.util.ArrayList;
 public class Song {
 
     /**
+     * Artista de la canciòn
+     */
+    private String artist;
+    /**
      * Título de la canción
      */
     private String title;
     /**
      * Id de la canción
      */
-    private  int id;
+    private  int id = 0;
     /**
      * Fecha de la canción
      */
@@ -48,14 +52,32 @@ public class Song {
     /**
      * Genera una instancia de la clase Song con parámetros
      */
-    public Song(String title, int id, LocalDate date, int length, String genre, String cover, String shortDescription) {
+    public Song( String artist, String title, LocalDate date, int length, String genre, String cover, String shortDescription) {
+        this.artist = artist;
         this.title = title;
-        this.id = id;
         this.date = date;
         this.length = length;
         this.genre = genre;
         this.cover = cover;
         this.shortDescription = shortDescription;
+
+        ++this.id;
+    }
+
+    /**
+     * Getter, devuelve el artista de la canciòn
+     * @return el artista de la canciòn
+     */
+    public String getArtista() {
+        return artist;
+    }
+    
+    /**
+     * Setter, setea el artista de la canción del objeto Song con el título pasado por parámetro
+     * @param artist
+     */
+    public void setArtist(String artist){
+        this.artist = artist;
     }
 
     /**
@@ -177,6 +199,7 @@ public class Song {
     @Override
     public String toString() {
         return "Song{" +
+                "artist='" + artist + '\'' +
                 "title='" + title + '\'' +
                 ", id=" + id +
                 ", date=" + date +
