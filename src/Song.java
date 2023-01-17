@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /**
  * Representa la clase canción que luego generará un playlist de canciones
- * @author Rubén Campos Reymundis - Pablo Hernán Gatti
+ * @author Ruben Campos Reymundis - Pablo Hernán Gatti
  *
  */
 
@@ -21,13 +21,7 @@ public class Song {
     /**
      * Id de la canción
      */
-<<<<<<< HEAD
-    static int counter = 1;
-
-    private int id;
-=======
     private  int id;
->>>>>>> devRuben1
     /**
      * Fecha de la canción
      */
@@ -59,12 +53,7 @@ public class Song {
     /**
      * Genera una instancia de la clase Song con parámetros
      */
-<<<<<<< HEAD
-    public Song( String artist, String title, LocalDate date, int length, String genre, String cover, String shortDescription) {
-        this.id = counter;
-=======
     public Song(String artist, String title, int id, LocalDate date, Integer length, String genre, String cover, String shortDescription) {
->>>>>>> devRuben1
         this.artist = artist;
         this.title = title;
         this.id = id;
@@ -73,11 +62,6 @@ public class Song {
         this.genre = genre;
         this.cover = cover;
         this.shortDescription = shortDescription;
-<<<<<<< HEAD
-
-        counter = counter +1;
-=======
->>>>>>> devRuben1
     }
     /**
      * Getter, devuelve el artista de la canción
@@ -260,7 +244,7 @@ public class Song {
         {
             System.out.println("Enter the year to make the filter:");
             year = scanner.nextInt();
-        } while (year > 1549 && year < 2024);
+        } while (year < 1549 || year > 2024);
 
         for (Song song: playlist)
         {
