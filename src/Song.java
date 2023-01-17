@@ -1,5 +1,6 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * Representa la clase canción que luego generará un playlist de canciones
@@ -10,7 +11,7 @@ import java.util.ArrayList;
 public class Song {
 
     /**
-     * Artista de la canciòn
+     * Artista de la canción
      */
     private String artist;
     /**
@@ -20,9 +21,13 @@ public class Song {
     /**
      * Id de la canción
      */
+<<<<<<< HEAD
     static int counter = 1;
 
     private int id;
+=======
+    private  int id;
+>>>>>>> devRuben1
     /**
      * Fecha de la canción
      */
@@ -54,32 +59,38 @@ public class Song {
     /**
      * Genera una instancia de la clase Song con parámetros
      */
+<<<<<<< HEAD
     public Song( String artist, String title, LocalDate date, int length, String genre, String cover, String shortDescription) {
         this.id = counter;
+=======
+    public Song(String artist, String title, int id, LocalDate date, Integer length, String genre, String cover, String shortDescription) {
+>>>>>>> devRuben1
         this.artist = artist;
         this.title = title;
+        this.id = id;
         this.date = date;
         this.length = length;
         this.genre = genre;
         this.cover = cover;
         this.shortDescription = shortDescription;
+<<<<<<< HEAD
 
         counter = counter +1;
+=======
+>>>>>>> devRuben1
     }
-
     /**
-     * Getter, devuelve el artista de la canciòn
-     * @return el artista de la canciòn
+     * Getter, devuelve el artista de la canción
+     * @return el artista de la canción
      */
-    public String getArtista() {
+    public String getArtist() {
         return artist;
     }
-    
     /**
-     * Setter, setea el artista de la canción del objeto Song con el título pasado por parámetro
+     * Setter, setea el artista de la canción del objeto Song con el artista pasado por parámetro
      * @param artist
      */
-    public void setArtist(String artist){
+    public void setArtist(String artist) {
         this.artist = artist;
     }
 
@@ -135,7 +146,7 @@ public class Song {
      * Getter, devuelve la duración de la canción
      * @return la duración de la canción
      */
-    public int getLength() {
+    public Integer getLength() {
         return length;
     }
 
@@ -143,7 +154,7 @@ public class Song {
      * Setter, setea la duración de la canción del objeto Song con la duración pasada por parámetro
      * @param length
      */
-    public void setLength(int length) {
+    public void setLength(Integer length) {
         this.length = length;
     }
 
@@ -203,7 +214,7 @@ public class Song {
     public String toString() {
         return "Song{" +
                 "artist='" + artist + '\'' +
-                "title='" + title + '\'' +
+                ", title='" + title + '\'' +
                 ", id=" + id +
                 ", date=" + date +
                 ", length=" + length +
@@ -218,7 +229,22 @@ public class Song {
      * @param playlist
      */
     public void filterByGenre(ArrayList<Song> playlist){
-        // CUALQUIER COSA ME AVISAS
+        Scanner scanner = new Scanner(System.in).useDelimiter("\n");
+        String genre;
+        boolean flag = false;
+        System.out.println("Enter the genre to make the filter:");
+        genre = scanner.next();
+        for (Song song: playlist)
+        {
+            if (song.getGenre().equals(genre))
+            {
+                System.out.println(song);
+                flag = true;
+            }
+        }
+        if (!flag){
+            System.out.println("There are no songs with the genre you entered");
+        }
     }
 
     /**
@@ -226,6 +252,48 @@ public class Song {
      * @param playlist
      */
     public void filterByYear(ArrayList<Song> playlist){
-        // CUALQUIER COSA ME AVISAS
+
+        Scanner scanner = new Scanner(System.in).useDelimiter("\n");
+        int year;
+        boolean flag = false;
+        do
+        {
+            System.out.println("Enter the year to make the filter:");
+            year = scanner.nextInt();
+        } while (year > 1549 && year < 2024);
+
+        for (Song song: playlist)
+        {
+            if (song.getDate().getYear() == year)
+            {
+                System.out.println(song);
+                flag = true;
+            }
+        }
+        if (!flag){
+            System.out.println("There are no songs with the year you entered");
+        }
+    }
+    /**
+     * Filtra las canciones de la playlist por artista
+     * @param playlist
+     */
+    public void filterByArtist(ArrayList<Song> playlist){
+        Scanner scanner = new Scanner(System.in).useDelimiter("\n");
+        String artist;
+        boolean flag = false;
+        System.out.println("Enter the artist to make the filter:");
+        artist = scanner.next();
+        for (Song song: playlist)
+        {
+            if (song.getArtist().equals(artist))
+            {
+                System.out.println(song);
+                flag = true;
+            }
+        }
+        if (!flag){
+            System.out.println("There are no songs with the artist you entered");
+        }
     }
 }

@@ -134,7 +134,7 @@ public class Menu {
                 
                 for (int i = 0; i < playlist.size(); i++){
                     System.out.println("-------- Music library --------\n"
-                                + "Artist :" + playlist.get(i).getArtista() + "\n"
+                                + "Artist :" + playlist.get(i).getArtist() + "\n"
                                 + "Title :" + playlist.get(i).getTitle() + "\n" 
                                 + "Id :" + playlist.get(i).getId() + "\n"
                                 + "Date :" + playlist.get(i).getDate() + "\n"
