@@ -3,6 +3,7 @@ import java.io.FileNotFoundException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 /**
@@ -122,24 +123,11 @@ public class Menu {
 
             case 7:
                 System.out.println("Sort by year"); 
-                song.filterByYear(playlist);
                 break;
 
             case 8:
                 System.out.println("show playlist");
-                
-                for (int i = 0; i < playlist.size(); i++){
-                    System.out.println("-------- Music library --------\n"
-                                + "Artist :" + playlist.get(i).getArtist() + "\n"
-                                + "Title :" + playlist.get(i).getTitle() + "\n" 
-                                + "Id :" + playlist.get(i).getId() + "\n"
-                                + "Date :" + playlist.get(i).getDate() + "\n"
-                                + "Length :" + playlist.get(i).getLength() + "\n"
-                                + "Genre :" + playlist.get(i).getGenre() + "\n"
-                                + "Cover :" + playlist.get(i).getCover() + "\n"
-                                + "shortDescription :" + playlist.get(i).getShortDescription() + "\n"
-                                );
-                }
+                showPlaylist(playlist);
 
                 break;
         }
@@ -148,24 +136,20 @@ public class Menu {
         exit = scanner.next();
         exit = exit.toLowerCase();
     }
-
-/* EJEMPLO PARA QUE EL USUARIO INGRESE LA FECHA
-    String day;
-    String  month;
-    String  year;
-    String completeDate;
-    LocalDate date;
-
-    System.out.println("Indique la fecha de :\n(primero el día, ej: 05, luego el mes, ej: 09 y luego el año, ej: 2022)");
-    day = scanner.next();
-    month = scanner.next();
-    anio = scanner.next();
-    // EL ORDEN DE COMO EL USUARIO PONE LOS DATOS ES INDISTINTO, LO IMPORTANTE ES EL ORDEN EN "completeDate o el nombre que le quieras poner"
-    completeDate = year + "-" + month + "-" + day;
-    date = LocalDate.parse(completeDate, DateTimeFormatter.ISO_LOCAL_DATE);
-        System.out.println(date);
-
-*/
 }
+    public static void showPlaylist(ArrayList<Song> playlist){
+        for (int i = 0; i < playlist.size(); i++){
+            System.out.println("-------- Music library --------\n"
+                        + "Artist :" + playlist.get(i).getArtist() + "\n"
+                        + "Title :" + playlist.get(i).getTitle() + "\n" 
+                        + "Id :" + playlist.get(i).getId() + "\n"
+                        + "Date :" + playlist.get(i).getDate() + "\n"
+                        + "Length :" + playlist.get(i).getLength() + "\n"
+                        + "Genre :" + playlist.get(i).getGenre() + "\n"
+                        + "Cover :" + playlist.get(i).getCover() + "\n"
+                        + "shortDescription :" + playlist.get(i).getShortDescription() + "\n"
+                        );
+        }
 
+    }
 }
