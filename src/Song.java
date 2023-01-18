@@ -19,9 +19,9 @@ public class Song {
      */
     private String title;
     /**
-     * Id de la canción
+     * Id de la canción. En Integer para trabajar con el Comparator
      */
-    private  int id;
+    private Integer id;
     /**
      * Fecha de la canción
      */
@@ -53,7 +53,7 @@ public class Song {
     /**
      * Genera una instancia de la clase Song con parámetros
      */
-    public Song(String artist, String title, int id, LocalDate date, Integer length, String genre, String cover, String shortDescription) {
+    public Song(String artist, String title, Integer id, LocalDate date, Integer length, String genre, String cover, String shortDescription) {
         this.artist = artist;
         this.title = title;
         this.id = id;
@@ -98,7 +98,7 @@ public class Song {
      * Getter, devuelve el id de la canción
      * @return el id de la canción
      */
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -106,7 +106,7 @@ public class Song {
      * Setter, setea el id de la canción del objeto Song con el id pasado por parámetro
      * @param id
      */
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
