@@ -1,2 +1,4 @@
 Nirvana::Smells Like Teen Spirit::01::1991-09-10::276::rock alternativo::Nevermind::Smells Like Teen Spirit es una canción de la banda estadounidense de grunge, Nirvana.
 U2::Elevation::02::2001-06-25::229::rock alternativo::All That You Can't Leave Behind::Elevación es el tercer sencillo del álbum All That You Can't Leave Behind, del grupo de rock irlandés U2.
+Tiesto::Adagio for Strings::03::2005-01-31::420::Hard trance::Just Be::Es una canción del disc-jockey y productor neerlandés Tiësto que fue incluida en el álbum de estudio Just Be.
+Tiesto::Traffic::04::2003-10-08::574::trance::Just Be::Es una canción del disc-jockey y productor neerlandés Tiësto que fue incluida en el álbum de estudio Just Be.
