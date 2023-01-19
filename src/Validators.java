@@ -1,17 +1,18 @@
 
 
 /**
- * Ordena la playlist, en este caso por duración o por fecha de las canciones
+ * Valida la entrada si es un nùmero o una cadena de caracteres.
  * @author Ruben Campos Reymundis - Pablo Hernán Gatti
  *
  */
 
 public class Validators {
-    /**
-     * Valida las entradas si son numeros o cadenas de caracteres
+     /**
+     * Mètodo que devuelve true si el dato ingresado es un numero, caso contrario false.
+     * @param input El parámetro input es la variable que contiene las opciones del menu.
      */
-
    public static Boolean isInteger(String input){
+    
       int number;
 
       try {
@@ -23,7 +24,10 @@ public class Validators {
       }
    }
    
-
+    /**
+     * Mètodo que devuelve true si el dato ingresado esta dentro del rango 1-10, caso contrario false.
+     * @param input El parámetro input es la variable que contiene las opciones del menu.
+     */
    public static Boolean optionRange(String input){
         
       int numero = Integer.parseInt(input); 

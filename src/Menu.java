@@ -7,14 +7,16 @@ import java.util.Collections;
 import java.util.Scanner;
 
 /**
- *
- * @author Rubén Campos Reymundis - Pablo Hernán Gatti
+ * Esta clase contiene el menu principal de la biblioteca musica
+ * @author: Rubén Campos Reymundis - Pablo Hernán Gatti
+ * @version: 18/01/2023/A
  *
  */
 
 public class Menu {
+
     public static void menu(){
-        
+    
     ArrayList<Song> playlist = new ArrayList<>();
 
     Scanner scanner = new Scanner(System.in).useDelimiter("\n");
@@ -168,6 +170,8 @@ public class Menu {
         exit = scanner.next();
         exit = exit.toLowerCase();
     }
+
+    scanner.close();
 }
     public static void showPlaylist(ArrayList<Song> playlist){
         for (int i = 0; i < playlist.size(); i++){
